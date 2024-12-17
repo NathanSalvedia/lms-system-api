@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+}
+.left-side-nav {
+  height: 100vh;
+  width: 23rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-side-nav .logo-img {
+  width: 13rem;
+  height: 13rem; 
+  padding: 3rem;
+  margin: 2rem;
+}
+.left-side-nav form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.input-container {
+  position: relative;
+  margin: 1.2rem;
+  width: 16rem;
+}
+.input-container input {
+  height: 2.5rem;
+  width: 85%;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding-left: 2.5rem; 
+  background-color: #D9D9D9;
+}
+.input-container input::placeholder {
+  color: gray; 
+  font-size: 0.8rem; 
+}
+.input-icon {
+  position: absolute;
+  left: 0.5rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem; 
+}
+.left-side-nav button {
+  background-color: #0FAF0F;
+  color: white;
+  width: 6rem;
+  height: 1.8rem;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+}
+.left-side-nav button:hover {
+  background-color: #0D9D0D; 
+}
+.left-side-nav .bottom-text {
+ border-top: 2px white solid;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ margin-top: 2.5rem;
+ padding: 3rem;
+}
+.left-side-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Picture wrap */
+.picture-content {
+  position: relative;
+  height: 100vh; 
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.left-image,
+.right-image {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 2; 
+  max-height: 100%; 
+}
+.left-image {
+  left: 420px; 
+  cursor: pointer;
+}
+.right-image {
+  right: 50px; 
+  cursor: pointer;
+}
+.picture-wrap {
+  display: flex; 
+  width: 100%; 
+  height: 100%;
+  overflow: hidden; 
+  position: relative; 
+}
+.collage-image {
+  display: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  box-sizing: border-box; 
+  opacity: 0;
+  transition: opacity 0.5s ease; 
+}
+.collage-image.active {
+  display: block; 
+  opacity: 1; 
+}
+
+/* 3 dots */
+
+.moving-dot {
+  position: absolute;
+  bottom: 50px; 
+  left: 58%;
+  transform: translateX(-50%); 
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: gray; 
+  border-radius: 50%; 
+  margin-left: 6rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.dot.active {
+  transform: scale(1.2);
+  background-color: #FFFFFF; 
+}
+
+/* responsive */
+
+@media (max-width: 368px) {
+  .left-image,
+  .right-image,
+  .moving-dot,
+  .picture-wrap {
+      display: none;
+  }
+}
+
